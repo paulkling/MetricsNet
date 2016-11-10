@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 
 
 using Metrics;
+using Metrics.NET.InfluxDB;
+using System;
 
 namespace MetricsNet
 {
@@ -45,8 +47,9 @@ namespace MetricsNet
 
             Metric.Config
                 .WithHttpEndpoint("http://localhost:1234/")
-                .WithAllCounters();
-
+                .WithAllCounters()
+                .WithReporting(config => config
+                    .WithInflux("192.168.1.8", 8086, "admin", "admin", "metrics", TimeSpan.FromSeconds(5)));
 
         }
     }
