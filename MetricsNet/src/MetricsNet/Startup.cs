@@ -49,7 +49,7 @@ namespace MetricsNet
                 .WithHttpEndpoint("http://localhost:1234/")
                 .WithAllCounters()
                 .WithReporting(config => config
-                    .WithInflux("192.168.1.8", 8086, "admin", "admin", "metrics", TimeSpan.FromSeconds(5)));
+                    .WithInflux("127.0.0.1", 8086, "paul", "paul", "metrics", TimeSpan.FromSeconds(5)));
 
         }
     }
