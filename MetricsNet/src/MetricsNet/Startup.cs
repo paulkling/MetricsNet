@@ -48,6 +48,8 @@ namespace MetricsNet
             Metric.Config
                 .WithHttpEndpoint("http://localhost:1234/")
                 .WithAllCounters()
+                //.WithSystemCounters()
+                //.WithInternalMetrics()
                 .WithReporting(config => config
                     .WithInflux("127.0.0.1", 8086, "paul", "paul", "metrics", TimeSpan.FromSeconds(5)));
 
